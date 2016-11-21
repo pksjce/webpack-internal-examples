@@ -25,13 +25,9 @@ class LogPlugin {
 
 new LogPlugin().apply(compiler);
 
-const callback = () => {
-    console.log('Compiler has finished execution.')
+const callback = (err, stats) => {
+    console.log('Compiler has finished execution.');
+    process.stdout.write(stats.toString() + "\n");
 };
 
-const run = () => {
-    console.log(process.argv);
-    compiler.run(callback);
-}
-
-run();
+compiler.run(callback)
