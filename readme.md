@@ -11,7 +11,7 @@ node --harmony compiler-example.js
 
 ### `multicompiler-example.js`
 
-``bash
+```bash
 cd multicompiler-example
 node --harmony multicompiler-example.js
 ```
