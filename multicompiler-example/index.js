@@ -1,1 +1,1 @@
-console.log('Running index.js')
+console.log('Running index.js');

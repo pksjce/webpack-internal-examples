@@ -1,6 +1,6 @@
 // Can be imported from webpack package
-var webpack = require('webpack');
-var config = require('./webpack.config.js');
+const webpack = require('webpack');
+const config = require('./webpack.config.js');
 
 new webpack.WebpackOptionsDefaulter().process(config);
 // Create a new compiler instance
@@ -15,11 +15,11 @@ class LogPlugin {
         compiler.plugin('should-emit', compilation => {
             console.log('should i emit?');
             return true;
-        })
+        });
         compiler.plugin('emit', (compilation, callback) => {
             console.log('Have I reached here?');
             callback()
-        })
+        });
     }
 } 
 
@@ -30,4 +30,4 @@ const callback = (err, stats) => {
     process.stdout.write(stats.toString() + "\n");
 };
 
-compiler.run(callback)
+compiler.run(callback);
